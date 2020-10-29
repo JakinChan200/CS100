@@ -10,7 +10,7 @@
 ## Project Description
 #### Goal
 
-* Utilize TMDb's api to recommend movies based on user input and put recommended movies onto files
+* Utilize TMDb's API to recommend movies based on user input and put recommended movies onto files
 
 #### Importance and Interest
 
