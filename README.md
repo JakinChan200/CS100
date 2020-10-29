@@ -1,7 +1,6 @@
 # Movie Recommendation Generator
  > Your author list below should include links to all members GitHub and should begin with a "\<" (remove existing author).
- 
- > Authors: \<[Gary Ou](https://github.com/GaryOu101)\>\<[Matthew O'Grady](https://github.com/mattrogrady)\>\<[Jakin Chan](https://github.com/JakinChan200)\>
+ Authors: \<[Gary Ou](https://github.com/GaryOu101)\>\<[Matthew O'Grady](https://github.com/mattrogrady)\>\<[Jakin Chan](https://github.com/JakinChan200)\>
  
  > ## Expectations
  > * Incorporate **three** distinct design patterns, *two* of the design patterns need to be taught in this course:
@@ -11,7 +10,7 @@
 ## Project Description
 #### Goal
 
-* Utilize TMDb's api to recommend movies based on user input and put recommend songs onto files
+* Utilize TMDb's api to recommend movies based on user input and put recommended movies onto files
 
 #### Importance and Interest
 
