@@ -1,11 +1,9 @@
 # Movie Recommendation Generator
  
 ### Authors:
-<ul>
-<li>[Gary Ou](https://github.com/GaryOu101)</li>
-<li>[Matthew O'Grady](https://github.com/mattrogrady)</li>
-<li>[Jakin Chan](https://github.com/JakinChan200)</li>
-</ul>
+ * [Gary Ou](https://github.com/GaryOu101)
+ * [Matthew O'Grady](https://github.com/mattrogrady)
+ * [Jakin Chan](https://github.com/JakinChan200)
 
 ## Project Description
 #### Goal
