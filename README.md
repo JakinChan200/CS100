@@ -24,8 +24,8 @@
 
 #### Input/Output
 
-&nbsp;&nbsp;&nbsp;&nbsp;Input: Movie Genres/Actors/Review Criteria\
-&nbsp;&nbsp;&nbsp;&nbsp;Output: Recommendations based on input
+&nbsp;&nbsp;&nbsp;&nbsp;Input: Desired genres, actors, and/or review criteria
+&nbsp;&nbsp;&nbsp;&nbsp;Output: Movie recommendations based on input
 
 #### Design Patterns
 1. 
