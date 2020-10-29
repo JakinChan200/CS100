@@ -1,12 +1,6 @@
 # Movie Recommendation Generator
- > Your author list below should include links to all members GitHub and should begin with a "\<" (remove existing author).
  
  Authors: \<[Gary Ou](https://github.com/GaryOu101)\>\<[Matthew O'Grady](https://github.com/mattrogrady)\>\<[Jakin Chan](https://github.com/JakinChan200)\>
- 
- > ## Expectations
- > * Incorporate **three** distinct design patterns, *two* of the design patterns need to be taught in this course:
- >   * Composite, Strategy, Abstract Factory, Visitor
- > * All three design patterns need to be linked together (it can't be three distinct projects)
 
 ## Project Description
 #### Goal
@@ -29,10 +23,10 @@
 &nbsp;&nbsp;&nbsp;&nbsp;Output: Movie recommendations based on input
 
 #### Design Patterns
-1. 
- > * What are the three design patterns you will be using. For each design pattern you must:
- >   * Explain in 3 - 5 sentences why you picked this pattern and what feature you will implement with it
- > * This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
+1. Abstract Factory Pattern (Jakin Chan)
+
+ * I chose this pattern because we needed a way to store the movie information. So a solution was to create movie objects. This design pattern is utilized to create the needed  objects to store the movie information.
+
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
