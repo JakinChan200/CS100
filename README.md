@@ -1,5 +1,5 @@
 # Movie Recommendation Generator
- > Your author list below should include links to all members GitHub and should begin with a "\<" (remove existing author).
+ > Your author list below should include links to all members GitHub and should begin with a "\<" (remove existing author).\n
  Authors: \<[Gary Ou](https://github.com/GaryOu101)\>\<[Matthew O'Grady](https://github.com/mattrogrady)\>\<[Jakin Chan](https://github.com/JakinChan200)\>
  
  > ## Expectations
