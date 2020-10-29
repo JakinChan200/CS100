@@ -25,7 +25,7 @@
 #### Design Patterns
 1. Abstract Factory Pattern (Jakin Chan): I chose this pattern because we needed a way to store the movie information. So a solution was to create movie objects. This design pattern is utilized to create the needed  objects to store the movie information.
  
-2. Visitor Pattern (Matthew O'Grady): The visitor pattern provides a way to separate an algorithm from the object structure which it is operating on. Due to its nature, this pattern provides the ideal way to interact with the movie objects that are pulled from the TMDb API. This way, the preferences that a user enters for genre, actors, and review criteria can easily be compared against the movie data from TMDb without having to modify the source. Because this pattern provides an easier way to run algorithms against TMDb movie data, we can easily form the list of movies that we recommend. 
+2. Visitor Pattern (Matthew O'Grady): The visitor pattern provides a way to separate an algorithm from the object structure that it is operating on. Due to its nature, this pattern provides the ideal way to interact with the movie objects that are pulled from the TMDb API. This way, the preferences that a user enters for genre, actors, and review criteria can easily be compared against the movie data from TMDb without having to modify the source. Because this pattern provides an easier way to run algorithms against TMDb movie data, we can easily form the list of movies that we recommend. 
 
 
  > ## Phase II
