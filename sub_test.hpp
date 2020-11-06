@@ -55,6 +55,41 @@ TEST(subTesting, decimals) {
     EXPECT_EQ(4.3-2.45, subtrTest->evaluate());
 }
 
+TEST(subTesting, decimalFirst) {
+    Base* variable1 = new MockOp(4.3);
+    Base* variable2 = new MockOp(2);
+    Base* subtrTest = new Sub(variable1, variable2);
+    EXPECT_EQ(4.3-2, subtrTest->evaluate());
+}
+
+TEST(subTesting, decimalSecond) {
+    Base* variable1 = new MockOp(4);
+    Base* variable2 = new MockOp(2.45);
+    Base* subtrTest = new Sub(variable1, variable2);
+    EXPECT_EQ(4-2.45, subtrTest->evaluate());
+}
+
+TEST(subTesting,negDecimalsAll) {
+    Base* variable1 = new MockOp(-4.3);
+    Base* variable2 = new MockOp(-2.45);
+    Base* subtrTest = new Sub(variable1, variable2);
+    EXPECT_EQ(-4.3+2.45, subtrTest->evaluate());
+}
+
+TEST(subTesting, doubleDigit) {
+    Base* variable1 = new MockOp(43);
+    Base* variable2 = new MockOp(25);
+    Base* subtrTest = new Sub(variable1, variable2);
+    EXPECT_EQ(18.000000, subtrTest->evaluate());
+}
+
+TEST(subTesting, doubleDigitNeg) {
+    Base* variable1 = new MockOp(-43);
+    Base* variable2 = new MockOp(-25);
+    Base* subtrTest = new Sub(variable1, variable2);
+    EXPECT_EQ(-18.000000, subtrTest->evaluate());
+}
+
 TEST(subTesting, withOperations) {
     Base* variable1 = new MockOp(4);
     Base* variable2 = new MockOp(-4);
@@ -64,19 +99,27 @@ TEST(subTesting, withOperations) {
     EXPECT_EQ(-3.000000, subtrTest->evaluate());
 }
 
+TEST(subTesting, withOperationsDecimals) {
+    Base* variable1 = new MockOp(4.2);
+    Base* variable2 = new MockOp(3.5);
+    Base* operator1 = new MockOperator(variable1, variable2);
+    Base* variable3 = new MockOp(3.7);
+    Base* subtrTest = new Sub(operator1, variable3);
+    EXPECT_EQ(4.2+3.5-3.7, subtrTest->evaluate());
+}
 
 TEST(subTesting, stringifyPositiveNum) {
     Base* variable1 = new MockOp(3);
     Base* variable2 = new MockOp(2);
     Base* subtrTest = new Sub(variable1, variable2);
-    EXPECT_EQ("3.000000 - 2.000000 ", subtrTest->stringify());
+    EXPECT_EQ("3.000000 - 2.000000", subtrTest->stringify());
 }
 
 TEST(subTesting, stringifyNegativeNum) {
     Base* variable1 = new MockOp(3);
     Base* variable2 = new MockOp(-4);
     Base* subtrTest = new Sub(variable1, variable2);
-    EXPECT_EQ("3.000000 - -4.000000 ", subtrTest->stringify());
+    EXPECT_EQ("3.000000 - -4.000000", subtrTest->stringify());
 }
 
 

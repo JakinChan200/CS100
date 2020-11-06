@@ -21,7 +21,7 @@ class Sub: public Base {
             return leftVariable - rightVariable;
         }
         string stringify() {
-            return left->stringify() + " - " + right->stringify() + " ";
+            return left->stringify() + " - " + right->stringify();
         }
 
     private:
