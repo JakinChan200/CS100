@@ -4,43 +4,119 @@
 #include "gtest/gtest.h"
 
 #include "mult.hpp"
-
+#include "mockOperation.hpp"
 TEST(MultTest, MultEvaluateZero) {
-    Mult* test = new Mult(0,8);
+    Base* variable1 = new Op(0);
+    Base* variable2 = new Op(0);
+    Mult* test = new Mult(variable1, variable2);
     EXPECT_EQ(test->evaluate(), 0);
 }
 
 TEST(MultTest, MultEvaluateNegative){
-    Mult* test = new Mult(-1,2);
-    EXPECT_EQ(test->evaluate(), -2);
+    Base* variable1 = new Op(-1);
+    Base* variable2 = new Op(2);
+    Mult* test = new Mult(variable1, variable2);
+    EXPECT_EQ(test->evaluate(), -2.000000);
+}
+
+TEST(MultTest, MultEvaluateNegativeSecond){
+    Base* variable1 = new Op(2);
+    Base* variable2 = new Op(-3);
+    Mult* test = new Mult(variable1, variable2);
+    EXPECT_EQ(test->evaluate(), -6.000000);
+}
+
+TEST(MultTest, MultEvaluateAllNegative){
+    Base* variable1 = new Op(-2);
+    Base* variable2 = new Op(-3);
+    Mult* test = new Mult(variable1, variable2);
+    EXPECT_EQ(test->evaluate(), 6.000000);
+}
+
+TEST(MultTest, MultEvaluateNegativeDecimal){
+    Base* variable1 = new Op(-3.5);
+    Base* variable2 = new Op(2);
+    Mult* test = new Mult(variable1, variable2);
+    EXPECT_EQ(test->evaluate(), -7.000000);
+}
+
+TEST(MultTest, MultEvaluateAllNegativeDecimal){
+    Base* variable1 = new Op(-4.5);
+    Base* variable2 = new Op(-3.2);
+    Mult* test = new Mult(variable1, variable2);
+    EXPECT_EQ(test->evaluate(), 14.400000);
 }
 
 TEST(MultTest, MultEvaluateDecimal){
-    Mult* test = new Mult(2.5,2);
-    EXPECT_EQ(test->evaluate(), 5);
+    Base* variable1 = new Op(2.5);
+    Base* variable2 = new Op(2);
+    Mult* test = new Mult(variable1, variable2);
+    EXPECT_EQ(test->evaluate(), 2.5*2);
 }
 
-TEST(MultTest, MultEvaluateEmpty){
-    Mult* test = new Mult();
-    EXPECT_EQ(test->evaluate(), 0);
+TEST(MultTest, MultEvaluateOperation){
+    Base* variable1 = new Op(3);
+    Base* variable2 = new Op(2);
+    Base* operator1 = new MockOperator(variable1, variable2);
+    Base* variable3 = new Op(4);
+    Mult* test = new Mult(operator1, variable3);
+    EXPECT_EQ(test->evaluate(), 20.000000);
 }
+
+TEST(MultTest, MultEvaluateOperatorNegative){
+    Base* variable1 = new Op(3);
+    Base* variable2 = new Op(2);
+    Base* operator1 = new MockOperator(variable1, variable2);
+    Base* variable3 = new Op(-4);
+    Mult* test = new Mult(operator1, variable3);
+    EXPECT_EQ(test->evaluate(), -20.000000);
+}
+
+TEST(MultTest, MultEvaluateOperationAllNegative){
+    Base* variable1 = new Op(-3);
+    Base* variable2 = new Op(-2);
+    Base* operator1 = new MockOperator(variable1, variable2);
+    Base* variable3 = new Op(-4);
+    Mult* test = new Mult(operator1, variable3);
+    EXPECT_EQ(test->evaluate(), 20.000000);
+}
+
+TEST(MultTest, MultEvaluateOperationDecimal){
+    Base* variable1 = new Op(3.2);
+    Base* variable2 = new Op(2.5);
+    Base* operator1 = new MockOperator(variable1, variable2);
+    Base* variable3 = new Op(5.1);
+    Mult* test = new Mult(operator1, variable3);
+    EXPECT_EQ(test->evaluate(), 29.070000);
+}
+
+
 TEST(MultTest, MultStringifyZero) {
-    Mult* test = new Mult(3,0);
-    EXPECT_EQ(test->stringify(), "0");
+    Base* variable1 = new Op(3);
+    Base* variable2 = new Op(0);
+    Mult* test = new Mult(variable1, variable2);
+    EXPECT_EQ(test->stringify(), "(3.000000) * (0.000000)");
 }
 
 TEST(MultTest, MultStringifyNegative){
-    Mult* test = new Mult(-2,5);
-    EXPECT_EQ(test->stringify(), "-10");
+    Base* variable1 = new Op(-2);
+    Base* variable2 = new Op(5);
+    Mult* test = new Mult(variable1, variable2);
+    EXPECT_EQ(test->stringify(), "(-2.000000) * (5.000000)");
 }
+
+TEST(MultTest, MultStringifyBothNegative){
+    Base* variable1 = new Op(-3);
+    Base* variable2 = new Op(-4);
+    Mult* test = new Mult(variable1, variable2);
+    EXPECT_EQ(test->stringify(), "(-3.000000) * (-4.000000)");
+}
+
 
 TEST(MultTest, MultStringifyDecimal){
-    Mult* test = new Mult(1.7,2);
-    EXPECT_EQ(test->stringify(), "3.4");
-}
-
-TEST(MultTest, MultStringifyEmpty){
-    Mult* test = new Mult();
-    EXPECT_EQ(test->stringify(), "0");
+    Base* variable1 = new Op(1.7);
+    Base* variable2 = new Op(2);
+    Mult* test = new Mult(variable1, variable2);
+    EXPECT_EQ(test->stringify(), "(1.700000) * (2.000000)");
 }
 #endif //__MULT_TEST_HPP__
