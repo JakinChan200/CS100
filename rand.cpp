@@ -7,7 +7,7 @@ class Rand: public Base{
     double a;
     public:
     Rand(){
-        a = rand();
+        a = rand() % 100 + 1;
     }
     virtual double evaluate(){
         return a;
