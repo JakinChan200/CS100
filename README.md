@@ -31,7 +31,8 @@
 2. Visitor Pattern (Matthew O'Grady): The visitor pattern provides a way to separate an algorithm from the object structure that it is operating on. Due to its nature, this pattern provides the ideal way to interact with the movie objects that are pulled from the TMDb API. This way, the preferences that a user enters for genre, actors, and review criteria can easily be compared against the movie data from TMDb without having to modify the source. Because this pattern provides an easier way to run algorithms against TMDb movie data, we can easily form the list of movies that we recommend. 
 
 3. Decorator Pattern (Gary Ou):The Decorator Pattern is intended to add extra functionality (decorate) to objects. In this project, we will use the decorator pattern to format and output relevant information from the movie objects. The output generated will list the genre, important actors, and ratings of the recommended movie.
-
+   ![movieDecorator](https://user-images.githubusercontent.com/42448439/99351254-0cfa6600-2855-11eb-9692-07575ffba4f6.PNG)
+   Description of Class Diagram: After computing the recommended movie, a movieInfo object is created to formulate an output message. We output relevant information about the movie through decorator objects, which will wrap/decorate (adding functionalities) to the movieInfo object. The decorator classes addGenre, addMovieDesc, addMovieTitle and addActors are the classes that will wrap over the movieInfo object and output their respective information.
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
  > * Set up your GitHub project board as a Kanban board for the project. It should have columns that map roughly to 
