@@ -26,28 +26,21 @@
 &nbsp;&nbsp;&nbsp;&nbsp;Output: Movie recommendations based on input
 
 #### Design Patterns
-1. Abstract Factory Pattern (Jakin Chan): I chose this pattern because we needed a way to store the movie information. So a solution was to create movie objects. This design pattern is utilized to create the needed  objects to store the movie information.
+1. Composite Pattern (Jakin Chan): I chose this pattern because we needed a way to store the movie information. So a solution was to create movie objects. This design pattern is utilized to create the needed  objects to store the movie information.
+  ![Composite Pattern](https://user-images.githubusercontent.com/42459094/99355012-5d28f680-285c-11eb-9cc7-b96ec69bd3dc.jpg)
+    ##### Description of Class Diagram: 
+    A composite pattern is used to store the movie objects. The movieCategory class represents the composite aspect of the pattern, where it will store the respective movie objects of the class newMovie. The newMovie class acts as the leafs of the design pattern, being stored under their respective category. Being stored in a hierarchy fashion allows the client to access the different movies easily.
  
 2. Visitor Pattern (Matthew O'Grady): The visitor pattern provides a way to separate an algorithm from the object structure that it is operating on. Due to its nature, this pattern provides the ideal way to interact with the movie objects that are pulled from the TMDb API. This way, the preferences that a user enters for genre, actors, and review criteria can easily be compared against the movie data from TMDb without having to modify the source. Because this pattern provides an easier way to run algorithms against TMDb movie data, we can easily form the list of movies that we recommend. 
    ![Screen Shot 2020-11-16 at 10 15 40 PM](https://user-images.githubusercontent.com/42446873/99353602-b2afd400-2859-11eb-8d6b-21c24f360245.png)
-   Description of Class Diagram: Instead of creating methods comparing information for each element (Genre, Actors, ReviewCriteria), one visitor class CompareInfo performs the required comparisions. The comparison is different depending on the element, so CompareInfo performs actions differently based on the concrete element passed to its visit methods (e.g. visit(a: Genre) vs. visit(b: Actors)). 
+    ##### Description of Class Diagram: 
+    Instead of creating methods comparing information for each element (Genre, Actors, ReviewCriteria), one visitor class CompareInfo performs the required comparisions. The comparison is different depending on the element, so CompareInfo performs actions differently based on the concrete element passed to its visit methods (e.g. visit(a: Genre) vs. visit(b: Actors)). 
 
 3. Decorator Pattern (Gary Ou):The Decorator Pattern is intended to add extra functionality (decorate) to objects. In this project, we will use the decorator pattern to format and output relevant information from the movie objects. The output generated will list the genre, important actors, and ratings of the recommended movie.
    ![movieDecorator](https://user-images.githubusercontent.com/42448439/99351254-0cfa6600-2855-11eb-9692-07575ffba4f6.PNG)
-   Description of Class Diagram: After computing the recommended movie, a movieInfo object is created to formulate an output message. We output relevant information about the movie through decorator objects, which will wrap/decorate (adding functionalities) to the movieInfo object. The decorator classes addGenre, addMovieDesc, addMovieTitle and addActors are the classes that will wrap over the movieInfo object and output their respective information.
- > ## Phase II
- > In addition to completing the "Class Diagram" section below, you will need to 
- > * Set up your GitHub project board as a Kanban board for the project. It should have columns that map roughly to 
- >   * Backlog, TODO, In progress, In testing, Done
- >   * You can change these or add more if you'd like, but we should be able to identify at least these.
- > * There is no requirement for automation in the project board but feel free to explore those options.
- > * Create an "Epic" (note) for each feature and each design pattern and assign them to the appropriate team member. Place these in the `Backlog` column
- > * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
- >   * Create smaller development tasks as issues and assign them to team members. Place these in the `Backlog` column.
- >   * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
-## Class Diagram
- > Include a class diagram(s) for each design pattern and a description of the diagram(s). This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper OMT notation (as discussed in the course slides). You may combine multiple design patterns into one diagram if you'd like, but it needs to be clear which portion of the diagram represents which design pattern (either in the diagram or in the description). 
- 
+    ##### Description of Class Diagram: 
+    After computing the recommended movie, a movieInfo object is created to formulate an output message. We output relevant information about the movie through decorator objects, which will wrap/decorate (adding functionalities) to the movieInfo object. The decorator classes addGenre, addMovieDesc, addMovieTitle and addActors are the classes that will wrap over the movieInfo object and output their respective information.
+
  > ## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
  > * Before the meeting you should perform a sprint plan like you did in Phase II
