@@ -26,7 +26,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;Output: Movie recommendations based on input
 
 #### Design Patterns
-1. Composite Pattern (Jakin Chan): I chose this pattern because we needed a way to store the movie information. So a solution was to create movie objects. This design pattern is utilized to create the needed  objects to store the movie information.
+1. Composite Pattern (Jakin Chan): I chose this pattern because we needed a way to store the movie information. So a solution was to create movie objects. This design pattern is utilized to easily create and store movie objects under their respective categories.
   ![Composite Pattern](https://user-images.githubusercontent.com/42459094/99355012-5d28f680-285c-11eb-9cc7-b96ec69bd3dc.jpg)
     ##### Description of Class Diagram: 
     A composite pattern is used to store the movie objects. The movieCategory class represents the composite aspect of the pattern, where it will store the respective movie objects of the class newMovie. The newMovie class acts as the leafs of the design pattern, being stored under their respective category. Being stored in a hierarchy fashion allows the client to access the different movies easily.
