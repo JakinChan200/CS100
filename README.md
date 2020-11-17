@@ -29,6 +29,7 @@
 1. Abstract Factory Pattern (Jakin Chan): I chose this pattern because we needed a way to store the movie information. So a solution was to create movie objects. This design pattern is utilized to create the needed  objects to store the movie information.
  
 2. Visitor Pattern (Matthew O'Grady): The visitor pattern provides a way to separate an algorithm from the object structure that it is operating on. Due to its nature, this pattern provides the ideal way to interact with the movie objects that are pulled from the TMDb API. This way, the preferences that a user enters for genre, actors, and review criteria can easily be compared against the movie data from TMDb without having to modify the source. Because this pattern provides an easier way to run algorithms against TMDb movie data, we can easily form the list of movies that we recommend. 
+   ![Screen Shot 2020-11-16 at 10 15 40 PM](https://user-images.githubusercontent.com/42446873/99353602-b2afd400-2859-11eb-8d6b-21c24f360245.png%22%3E)
 
 3. Decorator Pattern (Gary Ou):The Decorator Pattern is intended to add extra functionality (decorate) to objects. In this project, we will use the decorator pattern to format and output relevant information from the movie objects. The output generated will list the genre, important actors, and ratings of the recommended movie.
    ![movieDecorator](https://user-images.githubusercontent.com/42448439/99351254-0cfa6600-2855-11eb-9692-07575ffba4f6.PNG)
