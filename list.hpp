@@ -7,32 +7,28 @@
 #include "container.hpp"
 #include "sort.hpp"
 #include "base.hpp"
+#include "algorithm"
 
 using namespace std;
 
 class ListContainer: public Container{
     private: 
-    Sort* sort_function;
     list<Base *> l;
     public:
-        Container() : sort_function(nullptr) { };
-        Container(Sort* function) : sort_function(function) { };
-        
-        /* Non Virtual Functions */
-        void set_sort_function(Sort* sort_function); // set the type of sorting algorithm
-        this->sort_function = sort_function;
+	ListContainer(Sort* funct){
+	    sort_function = funct;
+	};
+	ListContainer(): Container(){};
         /* Pure Virtual Functions */
         // push the top pointer of the tree into container
-        virtual void add_element(Base* element)
-        {
+        virtual void add_element(Base* element){
             l.push_back(element);  
         }
         // iterate through trees and output the expressions (use stringify())
-        virtual void print()
-        {
-            for(i=0; i<l.size(); i++)
-            {
-                cout << stringify(l.at(i)) << endl;
+        virtual void print(){
+	    cout << "Trees: " << endl;
+            for(list<Base*>::iterator item = l.begin(); item != l.end(); item++){
+                cout << (*item)->stringify() << endl;
             }
         }
         // calls on the previously set sorting-algorithm. Checks if sort_function is not null, throw exception if otherwise
@@ -40,7 +36,7 @@ class ListContainer: public Container{
         {
             if(sort_function == nullptr)
             {
-                throw -1;
+                throw string("Invalid sort function");;
             }
             else
             {
@@ -49,22 +45,32 @@ class ListContainer: public Container{
         }
         /* Essentially the only functions needed to sort */
         //switch tree locations
-        virtual void swap(int i, int j)
-        {
-            Base* temp = l.at(i);
-            l.at(i) = l.at(j);
-            1.at(j) = temp;//new base = temp
-            delete temp;
+        virtual void swap(int i, int j){
+            auto first = std::next(l.begin(), i);
+            auto second = std::next(l.begin(), j);
+            std::iter_swap(first, second);
         }
         // get top ptr of tree at index i
-        virtual Base* at(int i)
-        {
-            return l.at(i);
+        virtual Base* at(int i){
+	    if(i < 0){
+		throw string("Out of Bounds error: less than Zero");
+	    }
+	    int counter = 0;
+            for(list<Base*>::iterator item = l.begin(); item != l.end(); item++){
+		if(counter == i){
+		    return *item;
+		}
+		counter++;
+	    }
+	    throw string("Out of Bounds error: larger than list size");
         }
         // return container size
-        virtual int size()
-        {
-          return l.size();  
+        virtual int size(){
+            int counter = 0;
+	    for(list<Base*>::iterator item = l.begin(); item != l.end(); item++){
+	        counter++;
+	    }
+	    return counter;  
         }
 };
 #endif //LIST_HPP

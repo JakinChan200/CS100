@@ -17,7 +17,7 @@
 
 using namespace std;
 
-TEST(SortTestSet, BubbleSortVectorTest) {
+TEST(BubbleSortTest, BubbleSortVectorTest) {
     Op* five = new Op(2);
     Op* four = new Op(7);
     Mult* TreeA = new Mult(five, four);
@@ -49,7 +49,7 @@ TEST(SortTestSet, BubbleSortVectorTest) {
     EXPECT_EQ(container->at(2)->evaluate(), 14);
 }
 
-TEST(SortTestSet, BubbleSortDecimalVectorTest) {
+TEST(BubbleSortTest, BubbleSortDecimalVectorTest) {
     Op* five = new Op(5);
     Op* four = new Op(4);
     Mult* TreeA = new Mult(five, four);
@@ -81,7 +81,7 @@ TEST(SortTestSet, BubbleSortDecimalVectorTest) {
     EXPECT_EQ(container->at(2)->evaluate(), 20);
 }
 
-TEST(SortTest, BubbleSortListTest) {
+TEST(BubbleSortTest, BubbleSortListTest) {
     Op* five = new Op(2);
     Op* four = new Op(7);
     Mult* TreeA = new Mult(five, four);
@@ -94,7 +94,7 @@ TEST(SortTest, BubbleSortListTest) {
     Op* three = new Op(4);
     Sub* TreeC = new Sub(ten, three);
 
-    VectorContainer* test = new ListContainer();
+    ListContainer* test = new ListContainer();
     test->add_element(TreeA);
     test->add_element(TreeB);
     test->add_element(TreeC);
@@ -113,7 +113,7 @@ TEST(SortTest, BubbleSortListTest) {
     EXPECT_EQ(test->at(2)->evaluate(), 14);
 }
 
-TEST(SortTest, BubbleSortDecimalListTest) {
+TEST(BubbleSortTest, BubbleSortDecimalListTest) {
     Op* five = new Op(5);
     Op* four = new Op(4);
     Mult* TreeA = new Mult(five, four);
@@ -126,7 +126,7 @@ TEST(SortTest, BubbleSortDecimalListTest) {
     Op* variable6 = new Op(12.2);
     Sub* TreeC = new Sub(variable5, variable6);
 
-    VectorContainer* test = new ListContainer();
+    ListContainer* test = new ListContainer();
     test->add_element(TreeA);
     test->add_element(TreeB);
     test->add_element(TreeC);

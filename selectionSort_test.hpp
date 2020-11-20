@@ -1,7 +1,10 @@
+#ifndef __SELECTIONSORT_TEST_HPP__
+#define __SELECTIONSORT_TEST_HPP__
 #include "gtest/gtest.h"
 #include "container.hpp"
 #include "selectionSort.hpp"
 #include "vectorContainer.hpp"
+#include "bubbleSort.hpp"
 #include "list.hpp"
 #include "add.hpp"
 #include "sub.hpp"
@@ -13,7 +16,7 @@
 #include "base.hpp"
 #include <iostream>
 
-TEST(SortTestSet, BasicFunctTest){
+TEST(SelectionSortTest, BasicFunctTest){
     Base* variable1 = new Op(1);
     Base* variable2 = new Op(2);
     Base* variable3 = new Op(3);
@@ -37,7 +40,7 @@ TEST(SortTestSet, BasicFunctTest){
     EXPECT_EQ(container->at(2)->evaluate(), 3);   
 }
 
-TEST(SortTestSet, SelectionSortTest) {
+TEST(SelectionSortTest, SelectionVectorTest) {
     Op* seven = new Op(7);
     Op* four = new Op(4);
     Mult* TreeA = new Mult(seven, four);
@@ -69,7 +72,7 @@ TEST(SortTestSet, SelectionSortTest) {
     EXPECT_EQ(container->at(2)->evaluate(), 28);
 }
 
-TEST(SortTestSet, SelectionSortDecimalTest) {
+TEST(SelectionSortTest, SelectionVectorDecimalTest) {
     Op* seven = new Op(7);
     Op* four = new Op(4);
     Mult* TreeA = new Mult(seven, four);
@@ -101,31 +104,7 @@ TEST(SortTestSet, SelectionSortDecimalTest) {
     EXPECT_EQ(container->at(2)->evaluate(), 28);
 }
 
-TEST(SortTestSet, BasicFunctListTest){
-    Base* variable1 = new Op(1);
-    Base* variable2 = new Op(2);
-    Base* variable3 = new Op(3);
-
-    VectorContainer* test = new ListContainer();
-    test->add_element(variable2);
-    test->add_element(variable3);
-    test->add_element(variable1);
-    
-    ASSERT_EQ(test->size(), 3);
-    EXPECT_EQ(test->at(0)->evaluate(), 2);
-    EXPECT_EQ(test->at(1)->evaluate(), 3);
-    EXPECT_EQ(test->at(2)->evaluate(), 1);
-
-    test->set_sort_function(new SelectionSort());
-    test->sort();
-
-    ASSERT_EQ(test->size(), 3);
-    EXPECT_EQ(test->at(0)->evaluate(), 1);
-    EXPECT_EQ(test->at(1)->evaluate(), 2);
-    EXPECT_EQ(test->at(2)->evaluate(), 3);   
-}
-
-TEST(SortTest, SelectionListTest) {
+TEST(SelectionSortTest, SelectionListTest) {
     Op* seven = new Op(7);
     Op* four = new Op(4);
     Mult* TreeA = new Mult(seven, four);
@@ -138,7 +117,7 @@ TEST(SortTest, SelectionListTest) {
     Op* six = new Op(6);
     Sub* TreeC = new Sub(ten, six);
 
-    VectorContainer* test = new ListContainer();
+    ListContainer* test = new ListContainer();
     test->add_element(TreeA);
     test->add_element(TreeB);
     test->add_element(TreeC);
@@ -157,7 +136,7 @@ TEST(SortTest, SelectionListTest) {
     EXPECT_EQ(test->at(2)->evaluate(), 28);
 }
 
-TEST(SortTest, SelectionListDecimalTest) {
+TEST(SelectionSortTest, SelectionListDecimalTest) {
     Op* seven = new Op(7);
     Op* four = new Op(4);
     Mult* TreeA = new Mult(seven, four);
@@ -170,7 +149,7 @@ TEST(SortTest, SelectionListDecimalTest) {
     Op* six = new Op(6.2);
     Sub* TreeC = new Sub(ten, six);
 
-    VectorContainer* container = new ListContainer();
+    ListContainer* test = new ListContainer();
     test->add_element(TreeA);
     test->add_element(TreeB);
     test->add_element(TreeC);
