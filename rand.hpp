@@ -1,3 +1,6 @@
+#ifndef RAND_HPP
+#define RAND_HPP
+
 #include <iostream>
 #include <string>
 #include "base.hpp"
@@ -19,3 +22,5 @@ class Rand: public Base{
             return to_string(a);
         }
 };
+
+#endif

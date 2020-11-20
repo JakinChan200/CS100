@@ -144,4 +144,6 @@ TEST(SortTest, BubbleSortDecimalListTest) {
     EXPECT_EQ(test->at(1)->evaluate(), 11);
     EXPECT_EQ(test->at(2)->evaluate(), 20);
 }
-#endif //__BUBBLESORT_TEST_HPP__
+
+#endif
+
