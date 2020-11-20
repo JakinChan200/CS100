@@ -35,11 +35,7 @@ TEST(ListTest, ListRegInput) {
     EXPECT_EQ(test->at(1)->evaluate(), 8);
     EXPECT_EQ(test->at(2)->evaluate(), 2);
 
-<<<<<<< Updated upstream
-    test->set_sort_function(new SelectionSort());
-=======
     test->set_sort_function(new BubbleSort());
->>>>>>> Stashed changes
     test->sort();
 
     ASSERT_EQ(test->size(), 3);
