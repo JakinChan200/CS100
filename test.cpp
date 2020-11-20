@@ -2,6 +2,7 @@
 
 #include "vectorContainer_test.hpp"
 #include "selectionSort_test.hpp"
+#include "bubbleSort_test.hpp"
 
 int main(int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);

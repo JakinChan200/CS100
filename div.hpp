@@ -1,3 +1,6 @@
+#ifndef DIV_HPP
+#define DIV_HPP
+
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -27,3 +30,5 @@ class Div: public Base{
             return ( "(" + a->stringify() + ") / (" + b->stringify() + ")" );
         }
 };
+
+#endif
