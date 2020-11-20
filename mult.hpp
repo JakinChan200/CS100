@@ -1,3 +1,6 @@
+#ifndef MULT_HPP
+#define MULT_HPP
+
 #include <iostream>
 #include <string>
 #include "base.hpp"
@@ -21,3 +24,5 @@ class Mult: public Base{
 	Base* a = nullptr;
 	Base* b = nullptr;
 };
+
+#endif
