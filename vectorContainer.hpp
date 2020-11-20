@@ -1,8 +1,8 @@
 #ifndef VECTORCONTAINER
 #define VECTORCONTAINER
 
-#include "container.hpp"
 #include "sort.hpp"
+#include "container.hpp"
 #include "base.hpp"
 #include <iostream>
 #include <vector>
@@ -15,10 +15,6 @@ class VectorContainer : public Container {
     public:
 	VectorContainer(){
 	    sort_function = nullptr;
-	}
-
-	VectorContainer(Sort *function){
-	    sort_function = function;
 	}
 
 	void add_element(Base* element){
