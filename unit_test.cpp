@@ -1,3 +1,13 @@
+
+#include "gtest/gtest.h"
+
+#include "movieComp_test.hpp"
+
+int main(int argc, char **argv) {
+  ::testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
+}
+/*
 // If more efficient we can split the unit_testing into multiple files based on what we want to test
 
 #include "gtest/gtest.h"
@@ -20,3 +30,4 @@ int main(int argc, char **argv) {
 	::testing::InitGoogleTest(&argc, argv);
 	return RUN_ALL_TESTS();
 }
+*/
