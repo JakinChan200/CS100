@@ -1,5 +1,6 @@
-#ifndef __ADDMOVIEACTORS__
-#define __ADDMOVIEACTORS__
+#ifndef __ADDACTORS_HPP__
+#define __ADDACTORS_HPP__
+
 #include <iostream>
 #include "decorator.hpp"
 
