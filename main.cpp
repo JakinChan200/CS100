@@ -1,3 +1,4 @@
+
 #include "movieInfo.hpp"
 #include "newMovie.hpp"
 #include "decorator.hpp"
@@ -45,7 +46,6 @@ int main(){
 
 
 	cout << "Testing complete." << endl;
-
 
 
 }

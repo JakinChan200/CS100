@@ -1,17 +1,19 @@
-#ifndef __MOVIEINFO_HPP__
-#define __MOVIEINFO_HPP__
+#ifndef MOVIEINFO_HPP
+#define MOVIEINFO_HPP
 
-#include <string>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
-class movieInfo {
-	public:
-	virtual string output_info() = 0;
+class MovieInfo {
+    public:
+        MovieInfo(){};
+        virtual string output_Info() = 0;
+        //virtual void add() = 0;
+        virtual string getName() = 0;
+    private:
+
 };
-
-
-
 
 #endif
