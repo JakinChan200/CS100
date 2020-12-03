@@ -32,7 +32,7 @@ TEST(FactoryTest, SimpleAdd){
     EXPECT_EQ(equation->evaluate(), 7);
 }
 
-TEST(FactoryTest, NegOutputSub){
+TEST(FactoryTest, NegOutputAdd){
     Factory* test = new Factory();
     int length = 4;
     const char** input = new const char*[length];
