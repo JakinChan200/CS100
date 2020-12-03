@@ -27,7 +27,7 @@ TEST(FactoryTest, SimpleAdd){
 
     Base* equation = test->parse(const_cast <char**> (input), 4);
 
-    EXPECT_EQ(equation->stringify(), "(1.000000) + (6.000000)");
+    EXPECT_EQ(equation->stringify(), "1.000000 + 6.000000 ");
     EXPECT_EQ(equation->evaluate(), 7);
 }
 
@@ -42,7 +42,7 @@ TEST(FactoryTest, NegOutputAdd){
 
     Base* equation = test->parse(const_cast <char**> (input), 4);
 
-    EXPECT_EQ(equation->stringify(), "(-6.000000) + (1.000000)");
+    EXPECT_EQ(equation->stringify(), "-6.000000 + 1.000000 ");
     EXPECT_EQ(equation->evaluate(), -5);
 }
 
@@ -57,7 +57,7 @@ TEST(FactoryTest, SimpleSub){
 
     Base* equation = test->parse(const_cast <char**> (input), 4);
 
-    EXPECT_EQ(equation->stringify(), "(6.000000) - (1.000000)");
+    EXPECT_EQ(equation->stringify(), "6.000000 - 1.000000");
     EXPECT_EQ(equation->evaluate(), 5);
 }
 
@@ -72,7 +72,7 @@ TEST(FactoryTest, NegOutputSub){
 
     Base* equation = test->parse(const_cast <char**> (input), 4);
 
-    EXPECT_EQ(equation->stringify(), "(1.000000) - (6.000000)");
+    EXPECT_EQ(equation->stringify(), "1.000000 - 6.000000");
     EXPECT_EQ(equation->evaluate(), -5);
 }
 
@@ -177,7 +177,7 @@ TEST(FactoryTest, SimplePow){
 
     Base* equation = test->parse(const_cast <char**> (input), 4);
 
-    EXPECT_EQ(equation->stringify(), "(1.000000) ** (6.000000)");
+    EXPECT_EQ(equation->stringify(), "(1.000000) ** (6.000000) ");
     EXPECT_EQ(equation->evaluate(), 1);
 }
 
@@ -192,7 +192,7 @@ TEST(FactoryTest, NegInputPow){
 
     Base* equation = test->parse(const_cast <char**> (input), 4);
 
-    EXPECT_EQ(equation->stringify(), "(-1.000000) ** (-6.000000)");
+    EXPECT_EQ(equation->stringify(), "(-1.000000) ** (-6.000000) ");
     EXPECT_EQ(equation->evaluate(), 1);
 }
 
@@ -207,7 +207,7 @@ TEST(FactoryTest, NegPow){
 
     Base* equation = test->parse(const_cast <char**> (input), 4);
 
-    EXPECT_EQ(equation->stringify(), "(2.000000) ** (-3.000000)");
+    EXPECT_EQ(equation->stringify(), "(2.000000) ** (-3.000000) ");
     EXPECT_EQ(equation->evaluate(), 0.125);
 }
 
@@ -222,7 +222,7 @@ TEST(FactoryTest, NegOutputPow){
 
     Base* equation = test->parse(const_cast <char**> (input), 4);
 
-    EXPECT_EQ(equation->stringify(), "(-3.000000) ** (3.000000)");
+    EXPECT_EQ(equation->stringify(), "(-3.000000) ** (3.000000) ");
     EXPECT_EQ(equation->evaluate(), -27);
 }
 
@@ -256,8 +256,8 @@ TEST(FactoryTest, TwoOperators){
 
     Base* equation = test->parse(const_cast <char**> (input), 6);
 
-    EXPECT_EQ(equation->stringify(), "(1.500000) + ((2.000000) * (3.000000))");
-    EXPECT_EQ(equation->evaluate(), 7.5);
+    EXPECT_EQ(equation->stringify(), "(1.500000 + 2.000000 ) * (3.000000)");
+    EXPECT_EQ(equation->evaluate(), 10.5);
 }
 
 TEST(FactoryTest, OneNegativeInput){
@@ -273,8 +273,8 @@ TEST(FactoryTest, OneNegativeInput){
     
     Base* equation = test->parse(const_cast <char**> (input), 6);
 
-    EXPECT_EQ(equation->stringify(), "(1.000000) + ((3.000000) * (-2.000000))");
-    EXPECT_EQ(equation->evaluate(), -5);
+    EXPECT_EQ(equation->stringify(), "(1.000000 + 3.000000 ) * (-2.000000)");
+    EXPECT_EQ(equation->evaluate(), -8);
 }
 
 TEST(FactoryTest, NegDecimalOutput){
@@ -291,8 +291,8 @@ TEST(FactoryTest, NegDecimalOutput){
     Base* equation = test->parse(const_cast <char**> (input), 6);
 
     cout << equation->stringify();
-    EXPECT_EQ(equation->stringify(), "(1.500000) - ((2.000000) * (3.000000))");
-    EXPECT_EQ(equation->evaluate(), -4.5);
+    EXPECT_EQ(equation->stringify(), "(1.500000 - 2.000000) * (3.000000)");
+    EXPECT_EQ(equation->evaluate(), -1.5);
 }
 
 TEST(FactoryTest, DoubleDigitInput){
