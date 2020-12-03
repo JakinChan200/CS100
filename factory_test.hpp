@@ -142,12 +142,11 @@ TEST(FactoryTest, NegOutputDiv){
 
 TEST(FactoryTest, SimplePow){
     Factory* test = new Factory();
-    int length = 4;
+    int length = 3;
     char** input = new char[length];
     input[0] = "1";
-    input[1] = "*";
-    input[2] = "*";
-    input[3] = "6";
+    input[1] = "**";
+    input[2] = "6";
 
     EXPECT_EQ(test->parse(input, length)->stringify(), "(1.000000) ** (6.000000)");
     EXPECT_EQ(test->parse(input, length)->evaluate(), 1);
@@ -155,12 +154,11 @@ TEST(FactoryTest, SimplePow){
 
 TEST(FactoryTest, NegInputPow){
     Factory* test = new Factory();
-    int length = 4;
+    int length = 3;
     char** input = new char[length];
     input[0] = "-1";
-    input[1] = "*";
-    input[2] = "*";
-    input[3] = "-6";
+    input[1] = "**";
+    input[2] = "-6";
 
     EXPECT_EQ(test->parse(input, length)->stringify(), "(-1.000000) ** (-6.000000)");
     EXPECT_EQ(test->parse(input, length)->evaluate(), 1);
