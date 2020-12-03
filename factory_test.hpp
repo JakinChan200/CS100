@@ -1,6 +1,5 @@
 #include "gtest/gtest.h"
 #include "factory.hpp"
-#include "main.cpp"
 #include <cstdio>
 #include <iostream>
 #include <vector>
