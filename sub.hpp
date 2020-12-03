@@ -3,6 +3,7 @@
 
 #include "base.hpp"
 #include <string>
+#include "iterator.hpp"
 
 using namespace std;
 
@@ -23,6 +24,20 @@ class Sub: public Base {
         string stringify() {
             return left->stringify() + " - " + right->stringify();
         }
+	
+	Iterator* create_iterator(){
+            Iterator* temp = new BinaryIterator(this);
+            return temp;
+        }
+
+        Base* get_left(){
+            return left;
+        }
+
+        Base* get_right(){
+            return right;
+        }
+
 
     private:
         Base* left = nullptr;

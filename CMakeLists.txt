@@ -10,6 +10,8 @@ ADD_EXECUTABLE(main
 
 ADD_EXECUTABLE(test
 	./test.cpp
+	./binary_iterator.cpp
+	./preorder_iterator.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest)
