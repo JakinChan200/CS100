@@ -18,10 +18,11 @@ class Factory {
 	Base* root = nullptr;
     public:
 	Factory(){};
-        Base* parse(char** input, int length){
+    
+	Base* parse(char** input, int length){
 	    if((length-1)%2 != 1){
     	        return nullptr;
-	    }
+		}
 	    
 	    double temp = stod(input[1]);
 	    root = new Op(temp);
@@ -34,15 +35,16 @@ class Factory {
 		Base* tempOperand = new Op(temp);
 
 		if(strOper == "+"){
-                        tempOperator = new Add(root, tempOperand);
-		}else if(strOper == "-"){
-                        tempOperator = new Sub(root, tempOperand);
+            tempOperator = new Add(root, tempOperand);
+		}
+		else if(strOper == "-"){
+            tempOperator = new Sub(root, tempOperand);
 		}else if(strOper == "*"){
-                        tempOperator = new Mult(root, tempOperand);
+            tempOperator = new Mult(root, tempOperand);
 		}else if(strOper == "/"){
-                        tempOperator = new Div(root, tempOperand);
+            tempOperator = new Div(root, tempOperand);
 		}else if(strOper == "**"){
-                        tempOperator = new Pow(root, tempOperand);
+            tempOperator = new Pow(root, tempOperand);
 		}else{
 			return nullptr;
 		}

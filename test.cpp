@@ -1,4 +1,5 @@
 #include "gtest/gtest.h"
+#include "factory_test.hpp"
 
 
 int main(int argc, char **argv){
