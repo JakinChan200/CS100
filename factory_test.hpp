@@ -290,6 +290,7 @@ TEST(FactoryTest, NegDecimalOutput){
 
     Base* equation = test->parse(const_cast <char**> (input), 6);
 
+    cout << equation->stringify();
     EXPECT_EQ(equation->stringify(), "(1.500000) - ((2.000000) * (3.000000))");
     EXPECT_EQ(equation->evaluate(), -4.5);
 }
