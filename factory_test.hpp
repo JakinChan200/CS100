@@ -8,7 +8,7 @@
 TEST(FactoryTest, NullPtrTest){
     Factory* test = new Factory();
     int length = 1;
-    char *input[length] = {"./calculator"};
+    char** input[length] = {"./calculator"};
 
     EXPECT_EQ(test->parse(input, length), nullptr); 
 }
@@ -16,7 +16,7 @@ TEST(FactoryTest, NullPtrTest){
 TEST(FactoryTest, SimpleAdd){
     Factory* test = new Factory();
     int length = 4;
-    char *input[length] = {"./calculator", "1", "+", "6"}
+    char** input[length] = {"./calculator", "1", "+", "6"}
 
     EXPECT_EQ(test->parse(input, length)->stringify(), "(1.000000) + (6.000000)");
     EXPECT_EQ(test->parse(input, length)->evaluate(), 7);
@@ -25,7 +25,7 @@ TEST(FactoryTest, SimpleAdd){
 TEST(FactoryTest, NegOutputSub){
     Factory* test = new Factory();
     int length = 4;
-    char *input[length] = {"./calculator", "-6", "+", "1"};
+    char** input[length] = {"./calculator", "-6", "+", "1"};
 
     EXPECT_EQ(test->parse(input, length)->stringify(), "(-6.000000) + (1.000000)");
     EXPECT_EQ(test->parse(input, length)->evaluate(), -5);
@@ -34,7 +34,7 @@ TEST(FactoryTest, NegOutputSub){
 TEST(FactoryTest, SimpleSub){
     Factory* test = new Factory();
     int length = 4;
-    char *input[length] = {"./calculator", "6", "-", "1"};
+    char** input[length] = {"./calculator", "6", "-", "1"};
 
     EXPECT_EQ(test->parse(input, length)->stringify(), "(6.000000) - (1.000000)");
     EXPECT_EQ(test->parse(input, length)->evaluate(), 5);
@@ -43,7 +43,7 @@ TEST(FactoryTest, SimpleSub){
 TEST(FactoryTest, NegOutputSub){
     Factory* test = new Factory();
     int length = 4;
-    char *input[length] = {"./calculator", "1", "-", "6"};
+    char** input[length] = {"./calculator", "1", "-", "6"};
 
     EXPECT_EQ(test->parse(input, length)->stringify(), "(1.000000) - (6.000000)");
     EXPECT_EQ(test->parse(input, length)->evaluate(), -5);
@@ -52,7 +52,7 @@ TEST(FactoryTest, NegOutputSub){
 TEST(FactoryTest, SimpleMult){
     Factory* test = new Factory();
     int length = 4;
-    char *input[length] = {"./calculator", "1", "*", "6"};
+    char** input[length] = {"./calculator", "1", "*", "6"};
 
     EXPECT_EQ(test->parse(input, length)->stringify(), "(1.000000) * (6.000000)");
     EXPECT_EQ(test->parse(input, length)->evaluate(), 6);
@@ -61,7 +61,7 @@ TEST(FactoryTest, SimpleMult){
 TEST(FactoryTest, NegInputMult){
     Factory* test = new Factory();
     int length = 4;
-    char *input[length] = {"./calculator", "-2", "*", "6"};
+    char** input[length] = {"./calculator", "-2", "*", "6"};
 
     EXPECT_EQ(test->parse(input, length)->stringify(), "(-2.000000) * (-6.000000)");
     EXPECT_EQ(test->parse(input, length)->evaluate(), 12);
@@ -70,7 +70,7 @@ TEST(FactoryTest, NegInputMult){
 TEST(FactoryTest, NegOutputMult){
     Factory* test = new Factory();
     int length = 4;
-    char *input[length] = {"./calculator", "-2", "*", "6"};
+    char** input[length] = {"./calculator", "-2", "*", "6"};
 
     EXPECT_EQ(test->parse(input, length)->stringify(), "(-2.000000) * (6.000000)");
     EXPECT_EQ(test->parse(input, length)->evaluate(), -12);
@@ -79,7 +79,7 @@ TEST(FactoryTest, NegOutputMult){
 TEST(FactoryTest, SimpleDiv){
     Factory* test = new Factory();
     int length = 4;
-    char *input[length] = {"./calculator", "6", "/", "2"};
+    char** input[length] = {"./calculator", "6", "/", "2"};
 
     EXPECT_EQ(test->parse(input, length)->stringify(), "(6.000000) / (2.000000)");
     EXPECT_EQ(test->parse(input, length)->evaluate(), 3);
@@ -88,7 +88,7 @@ TEST(FactoryTest, SimpleDiv){
 TEST(FactoryTest, NegInputDiv){
     Factory* test = new Factory();
     int length = 4;
-    char *input[length] = {"./calculator", "-6", "/", "2"};
+    char** input[length] = {"./calculator", "-6", "/", "2"};
 
     EXPECT_EQ(test->parse(input, length)->stringify(), "(-6.000000) / (-2.000000)");
     EXPECT_EQ(test->parse(input, length)->evaluate(), 3);
@@ -97,7 +97,7 @@ TEST(FactoryTest, NegInputDiv){
 TEST(FactoryTest, NegOutputDiv){
     Factory* test = new Factory();
     int length = 4;
-    char *input[length] = {"./calculator", "-6", "/", "2"};
+    char** input[length] = {"./calculator", "-6", "/", "2"};
 
     EXPECT_EQ(test->parse(input, length)->stringify(), "(-6.000000) / (2.000000)");
     EXPECT_EQ(test->parse(input, length)->evaluate(), -3);
@@ -106,7 +106,7 @@ TEST(FactoryTest, NegOutputDiv){
 TEST(FactoryTest, SimplePow){
     Factory* test = new Factory();
     int length = 4;
-    char *input[length] = {"./calculator", "1", "**", "6"};
+    char** put[length] = {"./calculator", "1", "**", "6"};
 
     EXPECT_EQ(test->parse(input, length)->stringify(), "(1.000000) ** (6.000000)");
     EXPECT_EQ(test->parse(input, length)->evaluate(), 1);
@@ -115,7 +115,7 @@ TEST(FactoryTest, SimplePow){
 TEST(FactoryTest, NegInputPow){
     Factory* test = new Factory();
     int length = 4;
-    char *input[length] = {"./calculator", "-1", "**", "-6"};
+    char** input[length] = {"./calculator", "-1", "**", "-6"};
 
     EXPECT_EQ(test->parse(input, length)->stringify(), "(-1.000000) ** (-6.000000)");
     EXPECT_EQ(test->parse(input, length)->evaluate(), 1);
@@ -124,7 +124,7 @@ TEST(FactoryTest, NegInputPow){
 TEST(FactoryTest, NegPow){
     Factory* test = new Factory();
     int length = 4;
-    char *input[length] = {"./calculator", "2", "**", "-3"};
+    char** input[length] = {"./calculator", "2", "**", "-3"};
 
     EXPECT_EQ(test->parse(input, length)->stringify(), "(2.000000) ** (-3.000000)");
     EXPECT_EQ(test->parse(input, length)->evaluate(), 0.125);
@@ -133,7 +133,7 @@ TEST(FactoryTest, NegPow){
 TEST(FactoryTest, NegOutputPow){
     Factory* test = new Factory();
     int length = 4;
-    char *input[length] = {"./calculator", "-3", "**", "3"};
+    char** input[length] = {"./calculator", "-3", "**", "3"};
 
     EXPECT_EQ(test->parse(input, length)->stringify(), "(-3.000000) ** (3.000000)");
     EXPECT_EQ(test->parse(input, length)->evaluate(), -27);
@@ -142,7 +142,7 @@ TEST(FactoryTest, NegOutputPow){
 TEST(FactoryTest, ZeroOutput){
     Factory* test = new Factory();
     int length = 6;
-    char *input[length] = {"./calculator", "0", "/", "2", "*", "3"};
+    char** input[length] = {"./calculator", "0", "/", "2", "*", "3"};
 
     EXPECT_EQ(test->parse(input, length)->stringify(), "(0.000000) / ((2.000000) * (3.000000))");
     EXPECT_EQ(test->parse(input, length)->evaluate(), 0);
@@ -151,7 +151,7 @@ TEST(FactoryTest, ZeroOutput){
 TEST(FactoryTest, TwoOperators){
     Factory* test = new Factory();
     int length = 6;
-    char *input[length] = {"./calculator", "1.5", "+", "2", "*", "3"};
+    char** input[length] = {"./calculator", "1.5", "+", "2", "*", "3"};
 
     EXPECT_EQ(test->parse(input, length)->stringify(), "(1.500000) + ((2.000000) * (3.000000))");
     EXPECT_EQ(test->parse(input, length)->evaluate(), 10.5);
@@ -160,7 +160,7 @@ TEST(FactoryTest, TwoOperators){
 TEST(FactoryTest, OneNegativeInput){
     Factory* test = new Factory();
     int length = 6;
-    char *input[length] = {"./calculator", "1", "+", "3", "*", "-2"};
+    char** input[length] = {"./calculator", "1", "+", "3", "*", "-2"};
 
     EXPECT_EQ(test->parse(input, length)->stringify(), "(1.000000) + ((3.000000) * (-2.000000))");
     EXPECT_EQ(test->parse(input, length)->evaluate(), -4);
@@ -169,7 +169,7 @@ TEST(FactoryTest, OneNegativeInput){
 TEST(FactoryTest, NegDecimalOutput){
     Factory* test = new Factory();
     int length = 6;
-    char *input[length] = {"./calculator", "1.5", "-", "2", "*", "3"};
+    char** input[length] = {"./calculator", "1.5", "-", "2", "*", "3"};
 
     EXPECT_EQ(test->parse(input, length)->stringify(), "(1.500000) - ((2.000000) * (3.000000))");
     EXPECT_EQ(test->parse(input, length)->evaluate(), -1.5);
@@ -178,7 +178,7 @@ TEST(FactoryTest, NegDecimalOutput){
 TEST(FactoryTest, DoubleDigitInput){
     Factory* test = new Factory();
     int length = 6;
-    char *input[length] = {"./calculator", "15", "/", "3", "*", "20"};
+    char** input[length] = {"./calculator", "15", "/", "3", "*", "20"};
 
     EXPECT_EQ(test->parse(input, length)->stringify(), "(15.000000) / ((3.000000) * (20.000000))");
     EXPECT_EQ(test->parse(input, length)->evaluate(), 100);
@@ -187,7 +187,7 @@ TEST(FactoryTest, DoubleDigitInput){
 TEST(FactoryTest, DoubleDigitDecimalInput){
     Factory* test = new Factory();
     int length = 6;
-    char *input[length] = {"./calculator", "35", "/", "0.5", "*", "20.2"};
+    char** input[length] = {"./calculator", "35", "/", "0.5", "*", "20.2"};
 
     EXPECT_EQ(test->parse(input, length)->stringify(), "(35.000000) / ((0.500000) * (20.200000))");
     EXPECT_EQ(test->parse(input, length)->evaluate(), 353.5);
