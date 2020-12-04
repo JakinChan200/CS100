@@ -156,7 +156,7 @@ TEST(visitorTest, BasicFunctContTest){
     
 }
 
-TEST(visitorTest, BasicFunctContTest){
+TEST(visitorTest, BasicFunctCont2Test){
     Base* variable1 = new Op(7);
     Base* variable2 = new Op(5);
     Base* variable3 = new Op(4);
