@@ -28,8 +28,8 @@ TEST(visitorTest, AddTest) {
     for(iter->first(); iter->is_done() == false; iter->next()){
         iter->current()->accept(visitor1);
     }
-    EXPECT_EQ(op_count, 3);
-    EXPECT_EQ(add_count, 1);
+    EXPECT_EQ(visitor1->op_count(), 3);
+    EXPECT_EQ(visitor1->add_count(), 1);
 }
 
 TEST(visitorTest, SubTest) {
@@ -47,8 +47,8 @@ TEST(visitorTest, SubTest) {
     for(iter->first(); iter->is_done() == false; iter->next()){
         iter->current()->accept(visitor1);
     }
-    EXPECT_EQ(op_count, 3);
-    EXPECT_EQ(sub_count, 1);
+    EXPECT_EQ(visitor1->op_count(), 3);
+    EXPECT_EQ(visitor1->sub_count(), 1);
 }
 
 TEST(visitorTest, MultTest) {
@@ -66,8 +66,8 @@ TEST(visitorTest, MultTest) {
     for(iter->first(); iter->is_done() == false; iter->next()){
         iter->current()->accept(visitor1);
     }
-    EXPECT_EQ(op_count, 3);
-    EXPECT_EQ(mult_count, 1);
+    EXPECT_EQ(visitor1->op_count(), 3);
+    EXPECT_EQ(visitor1->mult_count(), 1);
 }
 
 TEST(visitorTest, DivTest) {
@@ -85,8 +85,8 @@ TEST(visitorTest, DivTest) {
     for(iter->first(); iter->is_done() == false; iter->next()){
         iter->current()->accept(visitor1);
     }
-    EXPECT_EQ(op_count, 3);
-    EXPECT_EQ(div_count, 1);
+    EXPECT_EQ(visitor1->op_count(), 3);
+    EXPECT_EQ(visitor1->div_count(), 1);
 }
 
 TEST(visitorTest, PowTest) {
@@ -104,8 +104,8 @@ TEST(visitorTest, PowTest) {
     for(iter->first(); iter->is_done() == false; iter->next()){
         iter->current()->accept(visitor1);
     }
-    EXPECT_EQ(op_count, 3);
-    EXPECT_EQ(pow_count, 1);
+    EXPECT_EQ(visitor1->op_count(), 3);
+    EXPECT_EQ(visitor1->pow_count(), 1);
 }
 
 TEST(visitorTest, BasicFunctTest){
