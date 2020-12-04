@@ -11,6 +11,7 @@
 #include "pow.hpp"
 #include "rand.hpp"
 #include "iterator.hpp"
+#include "visitor.hpp"
 #include <iostream>
 
 TEST(visitorTest, AddTest) {
@@ -22,6 +23,7 @@ TEST(visitorTest, AddTest) {
     Base* dummyNode = new Add(operator1, variable3);
 
     Iterator* iter = new PreorderIterator(dummyNode);
+    CountVisitor* visitor1 = new CountVisitor();
     
     iter->first();
     for(iter->first(); iter->is_done() == false; iter->next()){
@@ -40,6 +42,7 @@ TEST(visitorTest, SubTest) {
     Base* dummyNode = new Sub(operator1, variable3);
 
     Iterator* iter = new PreorderIterator(dummyNode);
+    CountVisitor* visitor1 = new CountVisitor();
     
     iter->first();
     for(iter->first(); iter->is_done() == false; iter->next()){
@@ -58,6 +61,7 @@ TEST(visitorTest, MultTest) {
     Base* dummyNode = new Mult(operator1, variable3);
 
     Iterator* iter = new PreorderIterator(dummyNode);
+    CountVisitor* visitor1 = new CountVisitor();
     
     iter->first();
     for(iter->first(); iter->is_done() == false; iter->next()){
@@ -76,6 +80,7 @@ TEST(visitorTest, DivTest) {
     Base* dummyNode = new Div(operator1, variable3);
 
     Iterator* iter = new PreorderIterator(dummyNode);
+    CountVisitor* visitor1 = new CountVisitor();
     
     iter->first();
     for(iter->first(); iter->is_done() == false; iter->next()){
@@ -94,6 +99,7 @@ TEST(visitorTest, PowTest) {
     Base* dummyNode = new Pow(operator1, variable3);
 
     Iterator* iter = new PreorderIterator(dummyNode);
+    CountVisitor* visitor1 = new CountVisitor();
     
     iter->first();
     for(iter->first(); iter->is_done() == false; iter->next()){
