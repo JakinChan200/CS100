@@ -10,7 +10,6 @@
 #include "div.hpp"
 #include "pow.hpp"
 #include "rand.hpp"
-#include "iterator.hpp"
 #include "visitor.hpp"
 #include <iostream>
 
