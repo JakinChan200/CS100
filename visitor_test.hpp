@@ -174,7 +174,7 @@ TEST(visitorTest, BasicFunctCont2Test){
         iter->current()->accept(visitor1);
     }
 
-    EXPECT_EQ(visitor1->op_count(), 4);
+    EXPECT_EQ(visitor1->op_count(), 2);
     EXPECT_EQ(visitor1->rand_count(), 1);
     EXPECT_EQ(visitor1->pow_count(), 1);
     
