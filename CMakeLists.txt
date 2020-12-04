@@ -6,6 +6,8 @@ SET(CMAKE_CXX_STANDARD 11)
 
 ADD_EXECUTABLE(main
 	./main.cpp
+	./binary_iterator.cpp
+	./preorder_iterator.cpp
 )
 
 ADD_EXECUTABLE(test

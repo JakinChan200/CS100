@@ -3,13 +3,13 @@
 
 class CountVisitor{
     private:
-        int ops;
-        int rands;
-        int mults;
-        int divs;
-        int add;
-        int sub;
-        int pow;
+        int ops = 0;
+        int rands = 0;
+        int mults = 0;
+        int divs = 0;
+        int add = 0;
+        int sub = 0;
+        int pow = 0;
 
     public:
         CountVisitor(){};
@@ -21,7 +21,7 @@ class CountVisitor{
             return ops;
         }
         void visit_rand(){
-            rands++
+            rands++;
         }
         int rand_count(){
             return rands;

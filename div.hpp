@@ -7,6 +7,7 @@
 #include "base.hpp"
 #include "op.hpp"
 #include "iterator.hpp"
+#include "visitor.hpp"
 
 using namespace std;
 
@@ -42,6 +43,10 @@ class Div: public Base{
 
         Base* get_right(){
             return b;
+        }
+	
+	void accept(CountVisitor* visitor){
+            visitor->visit_div();
         }
 
 };

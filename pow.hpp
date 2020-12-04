@@ -5,7 +5,7 @@
 #include <string>
 #include <tgmath.h>
 #include "iterator.hpp"
-
+#include "visitor.hpp"
 using namespace std;
 
 class Pow: public Base {
@@ -37,6 +37,10 @@ class Pow: public Base {
 
         Base* get_right(){
             return right;
+        }
+
+	void accept(CountVisitor* visitor){
+            visitor->visit_pow();
         }
     
      private:
