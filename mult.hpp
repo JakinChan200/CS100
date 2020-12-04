@@ -5,6 +5,7 @@
 #include <string>
 #include "base.hpp"
 #include "iterator.hpp"
+#include "visitor.hpp"
 
 using namespace std;
 
@@ -35,7 +36,10 @@ class Mult: public Base{
         Base* get_right(){
             return b;
         }
-
+	
+	void accept(CountVisitor* visitor){
+	    visitor->visit_mult();
+	}
     private:
 	Base* a = nullptr;
 	Base* b = nullptr;

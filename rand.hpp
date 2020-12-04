@@ -5,6 +5,7 @@
 #include <string>
 #include "base.hpp"
 #include "iterator.hpp"
+#include "visitor.hpp"
 
 using namespace std;
 
@@ -36,6 +37,11 @@ class Rand: public Base{
         Base* get_right(){
             return nullptr;
         }
+
+	void accept(CountVisitor* visitor){
+            visitor->visit_rand();
+        }
+
 
 };
 

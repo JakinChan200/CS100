@@ -4,6 +4,7 @@
 #include "base.hpp"
 #include <string>
 #include "iterator.hpp"
+#include "visitor.hpp"
 
 using namespace std;
 
@@ -34,6 +35,10 @@ class Add: public Base {
 	
 	Base* get_right(){
 	    return right;   
+	}
+	
+	void accept(CountVisitor* visitor){
+	    visitor->visit_add();
 	}
 
     private:
