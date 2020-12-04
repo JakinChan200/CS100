@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 #include "base.hpp"
+#include "iterator.hpp"
+
 using namespace std;
 
 class Mult: public Base{
@@ -20,6 +22,20 @@ class Mult: public Base{
     	string stringify(){
             return ( "(" + a->stringify() + ") * (" + b->stringify() + ")" );
     	}
+	
+	Iterator* create_iterator(){
+            Iterator* temp = new BinaryIterator(this);
+            return temp;
+        }
+
+        Base* get_left(){
+            return a;
+        }
+
+        Base* get_right(){
+            return b;
+        }
+
     private:
 	Base* a = nullptr;
 	Base* b = nullptr;
