@@ -10,6 +10,8 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <ctype.h>
+#include "calculations.hpp"
 #include <sstream>
 
 using namespace std;
@@ -55,7 +57,7 @@ int main(){
 
 	cout << endl << "Welcome to the Movie Recommendation Generator!" << endl << endl;
 	cout << "In order to make the best recommendations possible, please answer the following questions..." << endl << endl;
-	cout << "First, please select the genre of movie that you're looking forby entering the corresponding number followed by enter:" << endl;
+	cout << "First, please select the genre of movie that you're looking for by entering the corresponding number followed by enter:" << endl;
 	cout << "1. Action" << endl;
 	cout << "2. Adventure" << endl;
 	cout << "3. Animation" << endl;
@@ -73,36 +75,57 @@ int main(){
 	cout << "15. Science Fiction" << endl;
 	cout << "16. Thriller" << endl;
 	cout << "17. War" << endl;
-	cout << "18. Western" << endl << endl;
-	int genreNum;
+	cout << "18. Western" << endl;
+
+	int genreNum = -1;
 	cin >> genreNum;
+	cout << endl;
+	while(genreNum > 18 || genreNum < 1){
+		cin.clear();
+		cin.ignore(10000, '\n');
+		cout << "Sorry, that is not a valid number, please enter a valid number." << endl;
+		cin >> genreNum;
+	}
 	cout << endl;
 	string genre = determine_genre(genreNum);
 
-	cout << "Next, please enter the minimum rating percentage of the movies you're hoping to watch (scale: 1-100): ";
-	int minimumRating;
+	cout << "Next, please enter the minimum rating percentage of the movies you're hoping to watch (scale: 1-100): " << endl;
+	cin.ignore(10000, '\n');
+	int minimumRating = -1;
 	cin >> minimumRating;
+	while(minimumRating > 100 || minimumRating < 1){
+		cin.clear();
+		cin.ignore(10000, '\n');
+		cout << "Sorry, that is not a valid rating, please enter a valid rating." << endl;
+		cin >> minimumRating;
+	}
 	cout << endl;
 
-	cout << "Next, please enter the maximum amount of length for the movies you're hoping to watch (in minutes): ";
-	int maxLength;
+	cout << "Next, please enter the maximum amount of length for the movies you're hoping to watch (in minutes): " << endl;
+	int maxLength = -1;
 	cin >> maxLength;
+	while(maxLength < 1){
+		cin.clear();
+		cin.ignore(10000, '\n');
+		cout << "Sorry, that is not a valid response, please enter a valid response" << endl;
+		cin >> maxLength;
+	}
 	cout << endl;
 	
-	cout << "Finally, please enter the minimum release year for the movies you're hoping to watch: ";
-	int minimumYear;
+	cout << "Finally, please enter the minimum release year for the movies you're hoping to watch: " << endl;
+	int minimumYear = 2021;
 	cin >> minimumYear;
+	while(cin.fail() || minimumYear > 2020){
+		cin.clear();
+		cin.ignore(10000, '\n');
+		cout << "Whoa, you must live in the future!" << endl;
+		cout << "Please enter a valid year: " << endl;
+		cin >> minimumYear;
+	}
 	cout << endl;
 
-	cout << genre << ", " << minimumRating << ", " << maxLength << ", " << minimumYear << endl;	
-
-	Movie preferredMovie = Movie("Preferred Movie", genre, minimumRating, maxLength, minimumYear);
-	ifstream movieData;
-	movieData.open("movieData.txt");
-	for (unsigned i = 0; i < 100; ++i) {
-		// Loop through movieData.txt and compare movies to preferredMovie to determine movies to recommend
-	}
-	movieData.close();	
+	Calculation preferredMovies = Calculation(genre, minimumRating, maxLength, minimumYear);
+	cout << preferredMovies.Calculate() << endl;
 
 	return 0;
 

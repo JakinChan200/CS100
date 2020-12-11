@@ -2,6 +2,7 @@
 #include "gtest/gtest.h"
 
 #include "movieComp_test.hpp"
+#include "main_test.hpp"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
