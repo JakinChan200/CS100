@@ -7,6 +7,7 @@
 #include "addMovieDesc.hpp"
 #include "addGenre.hpp"
 */
+#include "movie.hpp"
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -123,30 +124,55 @@ int main(){
 		cout << "Please enter a valid year: " << endl;
 		cin >> minimumYear;
 	}
-
-	// Movie preferredMovie = Movie("Preferred Movie", genre, minimumRating, maxLength, minimumYear);
-	ifstream movieData;
-	movieData.open("movieData.txt");
-	string line;
-	string temp;
-	vector<string> currMovie;
-	for (unsigned i = 0; i < 100; ++i) {
-		currMovie.clear();
-		getline(movieData, line);
-		stringstream ss(line);
-		while (getline(ss, temp, ',')) {
-			currMovie.push_back(temp);
-		}
-		// Run the algorithm
-		// Compare currMovie to user preferences
-			
-	} 
-	movieData.close();	
 	cout << endl;
 
-	//Calculation preferredMovies = Calculation(genre, minimumRating, maxLength, minimumYear);
-	//cout << preferredMovies.Calculate() << endl;
+	// Movie preferredMovie = Movie("Preferred Movie", genre, minimumRating, maxLength, minimumYear);
+		
+	    ifstream movieData;
+            movieData.open("movieData.txt");
+            string line;
+            string temp;
+            vector<string> currMovie;
+	    vector<string> recommendedMovies;
+            for (unsigned i = 0; i < 100; ++i) {
+                int matches = 0;
+                currMovie.clear();
+                getline(movieData, line);
+                stringstream ss(line);
+                while (getline(ss, temp, ',')) {
+                    currMovie.push_back(temp);
+                }
+                if(currMovie[1] == genre){
+                    matches++;
+                }
+                if(stoi(currMovie[2]) >= minimumRating){
+                    matches++;
+                }
+                if(stoi(currMovie[3]) <= maxLength){
+                    matches++;
+                }
+                if(stoi(currMovie[4]) >= minimumYear){
+                    matches++;
+                }
 
+                if(matches >= 3){
+                    recommendedMovies.push_back(currMovie[0]); 
+                }
+
+            } 
+            movieData.close();
+	
+	if (recommendedMovies.size() == 0) {
+		cout << "Sorry, none of our movies fit the standards you are hoping for." << endl << endl;
+	}
+	else {
+		cout << "Based on the information you entered, here is a list of movies we recommend to watch." << endl << endl;
+		for (unsigned i = 0; i < recommendedMovies.size(); ++i) {
+			cout << i + 1 << ". " << recommendedMovies.at(i) << endl;
+		}
+	}
+
+	
 	return 0;
 
 }
