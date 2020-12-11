@@ -34,11 +34,6 @@
 3. Decorator Pattern (Gary Ou): To add extra information about the outputted movies
    ![Composite Design Pattern (3)](https://user-images.githubusercontent.com/42459094/101896629-1ded7d00-3b5e-11eb-8f08-bcb1d85616a3.jpg)
 
- > ## Final deliverable
- > All group members will give a demo to the TA during lab time. The TA will check the demo and the project GitHub repository and ask a few questions to all the team members. 
- > Before the demo, you should do the following:
- > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
- > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
  ## Screenshots
  ![Example Screenshot 1](https://user-images.githubusercontent.com/42446873/101939024-3929ae00-3b99-11eb-9a84-88ffbf1c873b.png)
  ![Example Screenshot 2](https://user-images.githubusercontent.com/42446873/101939078-52caf580-3b99-11eb-911f-54dfc795c4fb.png)
