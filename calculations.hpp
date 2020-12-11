@@ -32,6 +32,9 @@ class Calculation {
             //Then add it to the category
             category->addMovie(temp);
 
+            //We can have 2 categories if you want, where 1 category is old movies, and another is new movies
+            //The only thing you would have to change is make sure the below code runs twice, one for each category
+
             Visitor* vis = new Visitor();
             category->movieVisit(vis);
             vector<MovieInfo*> movieList = vis->getMovieVector();
