@@ -10,6 +10,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <sstream>
 
 using namespace std;
 
@@ -94,6 +95,14 @@ int main(){
 	cout << endl;
 
 	cout << genre << ", " << minimumRating << ", " << maxLength << ", " << minimumYear << endl;	
+
+	Movie preferredMovie = Movie("Preferred Movie", genre, minimumRating, maxLength, minimumYear);
+	ifstream movieData;
+	movieData.open("movieData.txt");
+	for (unsigned i = 0; i < 100; ++i) {
+		// Loop through movieData.txt and compare movies to preferredMovie to determine movies to recommend
+	}
+	movieData.close();	
 
 	return 0;
 
