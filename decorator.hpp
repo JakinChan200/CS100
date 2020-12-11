@@ -6,13 +6,13 @@
 
 using namespace std;
 
-class decorator : public movieInfo {
+class decorator : public MovieInfo {
 	protected:
-		movieInfo* m_newMovie;
+		MovieInfo* m_newMovie;
 	public:
-		decorator(movieInfo* newMovie): m_newMovie(newMovie){}
+		decorator(MovieInfo* newMovie): m_newMovie(newMovie){}
 		string output_info(){
-			return m_newMovie->output_info();
+			return m_newMovie->output_Info();
 		}
 
 

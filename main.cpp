@@ -11,6 +11,7 @@
 #include <string>
 #include <fstream>
 #include <ctype.h>
+#include "calculations.hpp"
 
 using namespace std;
 
@@ -122,7 +123,8 @@ int main(){
 	}
 	cout << endl;
 
-	cout << genre << ", " << minimumRating << ", " << maxLength << ", " << minimumYear << endl;	
+	Calculation preferredMovies = Calculation(genre, minimumRating, maxLength, minimumYear);
+	cout << preferredMovies.Calculate() << endl;
 
 	return 0;
 
