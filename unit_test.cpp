@@ -16,7 +16,7 @@ int main(int argc, char **argv) {
 
 using namespace std;
 
-/*
+
 Write tests here of format..
 
 TEST(TestType, TestName) {
@@ -24,7 +24,7 @@ TEST(TestType, TestName) {
 	...
 	EXPECT_EQ(expression1, expression2);
 }
-*/
+
 
 int main(int argc, char **argv) {
 	::testing::InitGoogleTest(&argc, argv);
