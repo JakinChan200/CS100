@@ -46,5 +46,5 @@
  ## Installation/Usage
  In order to install this program, open your local terminal and clone this repository first. Afterwards, one must run the command "cmake3 ." to create the makefile followed by "make" to compile the code. At this point, the code is ready to be executed so the user must run the command "./main" in order to run the program. If the user wants to make changes in the code, they must re-run the "make" command in order to re-compile the code, before running "./main". 
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+This project was testing using googletest. There is a file called unit_test.cpp which runs all the tests, while each pattern was tested in its own file. Therefore, unit_test.cpp would include each of these tests and simply instruct googletest to run all of them.
  
