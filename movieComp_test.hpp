@@ -9,7 +9,7 @@
 
 using namespace std;
 
-TEST(movietest, testOutput_Info) {
+TEST(movietest, testMovieOutput_Info) {
     MovieInfo* movie1 = new Movie("tempName");
     cout << "Result" << endl;
     cout << movie1->output_Info() << endl;
@@ -17,8 +17,20 @@ TEST(movietest, testOutput_Info) {
     cout << "tempName" << endl;
 }
 
+TEST(movieCategorytest, testCategoryOutput_Info) {
+    MovieInfo* movie1 = new Movie("movieNumOne", "Drama, Fantasy", 90, 120, 2000);
+    MovieInfo* movie2 = new Movie("movieNumTwo");
+    MovieCategory* movieCat1 = new MovieCategory("movieCategoryThree");
+    movieCat1->addMovie(movie1);
+    movieCat1->addMovie(movie2);
+    cout << "Result" << endl;
+    cout << movieCat1->output_Info() << endl;
+    cout << "Expected" << endl;
+    cout << "Category: movieCategoryThree\nmovieNumOne\nmovieNumTwo\n" << endl;
+}
+
 TEST(movieCategorytest, testOutput_Info) {
-    MovieInfo* movie1 = new Movie("movieNumOne");
+    MovieInfo* movie1 = new Movie("movieNumOne", "Drama, Fantasy", 90, 120, 2000);
     MovieInfo* movie2 = new Movie("movieNumTwo");
     MovieCategory* movieCat1 = new MovieCategory("movieCategoryThree");
     movieCat1->addMovie(movie1);
