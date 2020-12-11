@@ -10,7 +10,7 @@ class addRating : public decorator{
 	public:
 		addRating(MovieInfo* newMovie): decorator(newMovie){}
 		string output_Info(){
-			return "RATING:" + m_newMovie->getRating() + '\n';
+		return "RATING:" + m_newMovie->getRating() + '\n';
 		}
 		string getName(){return "";}
 		string getGenre(){ return ""; }

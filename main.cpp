@@ -122,6 +122,15 @@ int main(){
 		cout << "Please enter a valid year: " << endl;
 		cin >> minimumYear;
 	}
+
+	Movie preferredMovie = Movie("Preferred Movie", genre, minimumRating, maxLength, minimumYear);
+	ifstream movieData;
+	movieData.open("movieData.txt");
+	for (unsigned i = 0; i < 100; ++i) {
+		// Loop through movieData.txt and compare movies to preferredMovie to determine movies to recommend
+    // Do this in Calculation.hpp
+	}
+	movieData.close();	
 	cout << endl;
 
 	Calculation preferredMovies = Calculation(genre, minimumRating, maxLength, minimumYear);

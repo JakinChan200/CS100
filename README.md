@@ -8,7 +8,7 @@
 ## Project Description
 #### Goal
 
-* Utilize TMDb's API to recommend movies based on user input and put recommended movies onto files
+* To recommend movies in a neat format based on user input
 
 #### Importance and Interest
 
@@ -17,38 +17,22 @@
 #### Language and Tools
 
  * C++
- * [TMDb API](https://www.themoviedb.org/documentation/api)
 
 #### Input/Output
 
-&nbsp;&nbsp;&nbsp;&nbsp;Input: Desired genres, actors, and/or review criteria
+&nbsp;&nbsp;&nbsp;&nbsp;Input: Desired genres, Runtime, Rating, and Release Year of Movies
 
 &nbsp;&nbsp;&nbsp;&nbsp;Output: Movie recommendations based on input
 
 #### Design Patterns
-1. Composite Pattern (Jakin Chan): I chose this pattern because we needed a way to store the movie information. So a solution was to create movie objects. This design pattern is utilized to easily create and store movie objects under their respective categories.
-  ![Composite Pattern](https://user-images.githubusercontent.com/42459094/99355012-5d28f680-285c-11eb-9cc7-b96ec69bd3dc.jpg)
-    ##### Description of Class Diagram: 
-    A composite pattern is used to store the movie objects. The movieCategory class represents the composite aspect of the pattern, where it will store the respective movie objects of the class newMovie. The newMovie class acts as the leafs of the design pattern, being stored under their respective category. Being stored in a hierarchy fashion allows the client to access the different movies easily.
- 
-2. Visitor Pattern (Matthew O'Grady): The visitor pattern provides a way to separate an algorithm from the object structure that it is operating on. Due to its nature, this pattern provides the ideal way to interact with the movie objects that are pulled from the TMDb API. This way, the preferences that a user enters for genre, actors, and review criteria can easily be compared against the movie data from TMDb without having to modify the source. Because this pattern provides an easier way to run algorithms against TMDb movie data, we can easily form the list of movies that we recommend. 
-   ![Screen Shot 2020-11-16 at 10 15 40 PM](https://user-images.githubusercontent.com/42446873/99353602-b2afd400-2859-11eb-8d6b-21c24f360245.png)
-    ##### Description of Class Diagram: 
-    Instead of creating methods comparing information for each element (Genre, Actors, ReviewCriteria), one visitor class CompareInfo performs the required comparisions. The comparison is different depending on the element, so CompareInfo performs actions differently based on the concrete element passed to its visit methods (e.g. visit(a: Genre) vs. visit(b: Actors)). 
+1. Composite Pattern (Jakin Chan): To store movies under specific catagories
+   ![Composite Design Pattern (1)](https://user-images.githubusercontent.com/42459094/101896527-00b8ae80-3b5e-11eb-9e77-b376b93eec86.jpg)
 
-3. Decorator Pattern (Gary Ou):The Decorator Pattern is intended to add extra functionality (decorate) to objects. In this project, we will use the decorator pattern to format and output relevant information from the movie objects. The output generated will list the genre, important actors, and ratings of the recommended movie.
-   ![movieDecorator](https://user-images.githubusercontent.com/42448439/99351254-0cfa6600-2855-11eb-9692-07575ffba4f6.PNG)
-    ##### Description of Class Diagram: 
-    After computing the recommended movie, a movieInfo object is created to formulate an output message. We output relevant information about the movie through decorator objects, which will wrap/decorate (adding functionalities) to the movieInfo object. The decorator classes addGenre, addMovieDesc, addMovieTitle and addActors are the classes that will wrap over the movieInfo object and output their respective information.
-
- > ## Phase III
- > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
- > * Before the meeting you should perform a sprint plan like you did in Phase II
- > * In the meeting with your TA you will discuss: 
- >   - How effective your last sprint was (each member should talk about what they did)
- >   - Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- >   - Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- >   - What tasks you are planning for this next sprint.
+2. Visitor Pattern (Matthew O'Grady): Gets the movie objects from their respective categories
+   ![Composite Design Pattern (2)](https://user-images.githubusercontent.com/42459094/101896587-1037f780-3b5e-11eb-895e-5f8b0d963e68.jpg)
+   
+3. Decorator Pattern (Gary Ou): To add extra information about the outputted movies
+   ![Composite Design Pattern (3)](https://user-images.githubusercontent.com/42459094/101896629-1ded7d00-3b5e-11eb-8f08-bcb1d85616a3.jpg)
 
  > ## Final deliverable
  > All group members will give a demo to the TA during lab time. The TA will check the demo and the project GitHub repository and ask a few questions to all the team members. 

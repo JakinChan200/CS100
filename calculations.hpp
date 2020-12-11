@@ -4,10 +4,16 @@
 #include "Visitor.hpp"
 #include "movieInfo.hpp"
 #include "movie.hpp"
+#include "newMovie.hpp"
+#include "decorator.hpp"
 #include "movieCategory.hpp"
 #include "decorator.hpp"
 #include "addGenre.hpp"
 #include "addRating.hpp"
+#include "addYear.hpp"
+#include "addRuntime.hpp"
+#include "addRating.hpp"
+#include "Visitor.hpp"
 #include <string>
 #include <vector>
 
@@ -48,8 +54,6 @@ class Calculation {
             category->accept(friendly);
             int numMovies = friendly->getCounter();
 
-            vector<MovieInfo*> movies = category->getMovies();
-
             for(int i = 0; i < movies.size(); i++){
                 final += movies[i]->output_Info();
                 MovieInfo* temp = new addGenre(movies[i]);
@@ -60,3 +64,4 @@ class Calculation {
         }
 };
 #endif
+
