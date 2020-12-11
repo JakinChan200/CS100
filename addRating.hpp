@@ -1,16 +1,16 @@
-#ifndef __ADDGENRE_HPP__
-#define __ADDGENRE_HPP__
+#ifndef __ADDRATING_HPP__
+#define __ADDRATING_HPP__
 
 #include "decorator.hpp"
 #include "movieInfo.hpp"
 
 using namespace std;
 
-class addGenre : public decorator{
+class addRating : public decorator{
 	public:
-		addGenre(MovieInfo* newMovie): decorator(newMovie){}
+		addRating(MovieInfo* newMovie): decorator(newMovie){}
 		string output_Info(){
-			return "GENRE:" + m_newMovie->getGenre()+"\n";
+			return "RATING:" + m_newMovie->getRating() + '\n';
 		}
 		string getName(){return "";}
 		string getGenre(){ return ""; }

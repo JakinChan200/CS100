@@ -19,7 +19,7 @@ TEST(movietest, testMovieOutput_Info) {
 
 TEST(movieCategorytest, testCategoryOutput_Info) {
     MovieInfo* movie1 = new Movie("movieNumOne", "Drama, Fantasy", 90, 120, 2000);
-    MovieInfo* movie2 = new Movie("movieNumTwo");
+    MovieInfo* movie2 = new Movie("movieNumTwo", "Adventure", 90, 140, 2020);
     MovieCategory* movieCat1 = new MovieCategory("movieCategoryThree");
     movieCat1->addMovie(movie1);
     movieCat1->addMovie(movie2);

@@ -1,16 +1,25 @@
 #ifndef CALCULATIONS_HPP
 #define CALCULATIONS_HPP
 
+#include "Visitor.hpp"
 #include "movieInfo.hpp"
 #include "movie.hpp"
 #include "movieCategory.hpp"
+#include "decorator.hpp"
 #include "addGenre.hpp"
-#include "Visitor.hpp"
+#include "addRating.hpp"
 #include <string>
+#include <vector>
 
 using namespace std;
 
 class Calculation {
+    private:
+        string movieGenre = "";
+        int movieRating;
+        int maxRunTime;
+        int minYear;
+        string fileName = ""; //in this case would be movieData.txt
     public:
         Calculation(){};
         Calculation(string prefGenre, int minRating, int maxRunTime, int minYear){
@@ -27,34 +36,27 @@ class Calculation {
             //find movies you want
             //If you find one you want, then run
 
-            MovieInfo* temp = new Movie("fbdsakf", "fnsdf", 23, 420, 69);
+            MovieInfo* temp1 = new Movie("fbdsakf", "fnsdf", 23, 420, 69);
             //following this format of course: Movie(string name, string genre, int rating, int runtime, int year){ 
             //Then add it to the category
-            category->addMovie(temp);
+            category->addMovie(temp1);
 
             //We can have 2 categories if you want, where 1 category is old movies, and another is new movies
             //The only thing you would have to change is make sure the below code runs twice, one for each category
 
-            Visitor* vis = new Visitor();
-            category->movieVisit(vis);
-            vector<MovieInfo*> movieList = vis->getMovieVector();
+            Visitor* friendly = new Visitor();
+            category->accept(friendly);
+            int numMovies = friendly->getCounter();
 
-            for(int i = 0; i < movieList.size(); i++){
-                final += movieList[i]->getName();
-                temp = new addGenre(movieList[i]);
+            vector<MovieInfo*> movies = category->getMovies();
+
+            for(int i = 0; i < movies.size(); i++){
+                final += movies[i]->output_Info();
+                MovieInfo* temp = new addGenre(movies[i]);
                 final += temp->output_Info();
-
-                //now do the same with the other classes
             }
 
             return final;
         }
-    private:
-        string movieGenre = "";
-        int movieRating;
-        int maxRunTime;
-        int minYear;
-        string fileName = ""; //in this case would be movieData.txt
 };
-
 #endif
