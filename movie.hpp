@@ -1,6 +1,7 @@
 #ifndef MOVIE_HPP
 #define MOVIE_HPP
 #include "movieInfo.hpp"
+#include "visitor.hpp"
 #include <string>
 #include <vector>
 
@@ -27,6 +28,9 @@ class Movie : public MovieInfo {
         int getRating(){ return rating; }
         int getRunTime(){ return runtime; }
         int getYear(){ return year; }
+        void movieVisit(Visitor* visit){
+            visit->addVisit(this);
+        }
     
     private:
         string name = "";

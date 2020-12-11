@@ -1,6 +1,7 @@
 #ifndef MOVIECATEGORY_HPP
 #define MOVIECATEGORY_HPP
 #include "movieInfo.hpp"
+#include "visitor.hpp"
 #include <string>
 #include <vector>
 
@@ -23,6 +24,16 @@ class MovieCategory : public MovieInfo {
         void addMovie(MovieInfo* movie) {
             movies.push_back(movie);
         }
+
+        void movieVisit(Visitor* visit){
+            for(auto element : movies){
+                element->movieVisit(visit);
+            }
+        }
+        string getGenre(){ return; }
+        int getRating(){ return; }
+        int getRunTime(){ return; }
+        int getYear(){ return; }
     private:
         string name = "";
         vector<MovieInfo*> movies;

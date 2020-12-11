@@ -11,6 +11,7 @@
 #include <string>
 #include <fstream>
 #include <ctype.h>
+#include "calculations.hpp"
 #include <sstream>
 
 using namespace std;
@@ -56,7 +57,6 @@ int main(){
 
 	cout << endl << "Welcome to the Movie Recommendation Generator!" << endl << endl;
 	cout << "In order to make the best recommendations possible, please answer the following questions..." << endl << endl;
-
 	cout << "First, please select the genre of movie that you're looking for by entering the corresponding number followed by enter:" << endl;
 	cout << "1. Action" << endl;
 	cout << "2. Adventure" << endl;
@@ -128,8 +128,13 @@ int main(){
 	movieData.open("movieData.txt");
 	for (unsigned i = 0; i < 100; ++i) {
 		// Loop through movieData.txt and compare movies to preferredMovie to determine movies to recommend
+    // Do this in Calculation.hpp
 	}
 	movieData.close();	
+	cout << endl;
+
+	Calculation preferredMovies = Calculation(genre, minimumRating, maxLength, minimumYear);
+	cout << preferredMovies.Calculate() << endl;
 
 	return 0;
 
