@@ -44,7 +44,7 @@
  ![Example Screenshot 2](https://user-images.githubusercontent.com/42446873/101939078-52caf580-3b99-11eb-911f-54dfc795c4fb.png)
  ![Example Screenshot 3](https://user-images.githubusercontent.com/42446873/101939092-5a8a9a00-3b99-11eb-8876-666cecbb0dd2.png)
  ## Installation/Usage
- > Instructions on installing and running your application
+ In order to install this program, open your local terminal and clone this repository first. Afterwards, one must run the command "cmake3 ." to create the makefile followed by "make" to compile the code. At this point, the code is ready to be executed so the user must run the command "./main" in order to run the program. If the user wants to make changes in the code, they must re-run the "make" command in order to re-compile the code, before running "./main". 
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
  
