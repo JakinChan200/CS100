@@ -29,7 +29,7 @@
    ![Composite Design Pattern (1)](https://user-images.githubusercontent.com/42459094/101896527-00b8ae80-3b5e-11eb-9e77-b376b93eec86.jpg)
 
 2. Visitor Pattern (Matthew O'Grady): Gets the movie objects from their respective categories
-   ![Composite Design Pattern (2)](https://user-images.githubusercontent.com/42459094/101896587-1037f780-3b5e-11eb-895e-5f8b0d963e68.jpg)
+   ![Composite Design Pattern (4)](https://user-images.githubusercontent.com/42459094/101943632-4a29ed80-3ba0-11eb-9a3b-dec3e42bec1e.jpg)
    
 3. Decorator Pattern (Gary Ou): To add extra information about the outputted movies
    ![Composite Design Pattern (3)](https://user-images.githubusercontent.com/42459094/101896629-1ded7d00-3b5e-11eb-8f08-bcb1d85616a3.jpg)
