@@ -1,7 +1,7 @@
 #ifndef MOVIECATEGORY_HPP
 #define MOVIECATEGORY_HPP
 #include "movieInfo.hpp"
-#include "visitor.hpp"
+#include "Visitor.hpp"
 #include "decorator.hpp"
 #include <string>
 #include <vector>
