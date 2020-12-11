@@ -1,12 +1,12 @@
 #ifndef MOVIE_HPP
 #define MOVIE_HPP
 #include "movieInfo.hpp"
-#include "visitor.hpp"
+#include "movieCategory.hpp"
 #include <string>
 #include <vector>
 
 using namespace std;
-
+class Visitor;
 class Movie : public MovieInfo {
     public:
         Movie(){};
@@ -28,8 +28,9 @@ class Movie : public MovieInfo {
         int getRating(){ return rating; }
         int getRunTime(){ return runtime; }
         int getYear(){ return year; }
-        void movieVisit(Visitor* visit){
-            visit->addVisit(this);
+
+        void accept(Visitor* visi){
+            visi->visit();
         }
     
     private:
