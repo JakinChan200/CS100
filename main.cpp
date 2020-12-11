@@ -11,8 +11,9 @@
 #include <string>
 #include <fstream>
 #include <ctype.h>
-#include "calculations.hpp"
+//#include "calculations.hpp"
 #include <sstream>
+#include <vector>
 
 using namespace std;
 
@@ -123,18 +124,28 @@ int main(){
 		cin >> minimumYear;
 	}
 
-	Movie preferredMovie = Movie("Preferred Movie", genre, minimumRating, maxLength, minimumYear);
+	// Movie preferredMovie = Movie("Preferred Movie", genre, minimumRating, maxLength, minimumYear);
 	ifstream movieData;
 	movieData.open("movieData.txt");
+	string line;
+	string temp;
+	vector<string> currMovie;
 	for (unsigned i = 0; i < 100; ++i) {
-		// Loop through movieData.txt and compare movies to preferredMovie to determine movies to recommend
-    // Do this in Calculation.hpp
-	}
+		currMovie.clear();
+		getline(movieData, line);
+		stringstream ss(line);
+		while (getline(ss, temp, ',')) {
+			currMovie.push_back(temp);
+		}
+		// Run the algorithm
+		// Compare currMovie to user preferences
+			
+	} 
 	movieData.close();	
 	cout << endl;
 
-	Calculation preferredMovies = Calculation(genre, minimumRating, maxLength, minimumYear);
-	cout << preferredMovies.Calculate() << endl;
+	//Calculation preferredMovies = Calculation(genre, minimumRating, maxLength, minimumYear);
+	//cout << preferredMovies.Calculate() << endl;
 
 	return 0;
 
