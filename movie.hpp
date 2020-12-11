@@ -4,10 +4,17 @@
 #include "movieCategory.hpp"
 #include <string>
 #include <vector>
+#include <iostream>
 
 using namespace std;
 class Visitor;
 class Movie : public MovieInfo {
+    private:
+        string name = "";
+        string genre = "";
+        int rating = 0;
+        int runtime = 0;
+        int year = 0;
     public:
         Movie(){};
         Movie(string name){
@@ -32,12 +39,5 @@ class Movie : public MovieInfo {
         void accept(Visitor* visi){
             visi->visit();
         }
-    
-    private:
-        string name = "";
-        string genre = "";
-        int rating = 0;
-        int runtime = 0;
-        int year = 0;
 };
 #endif
