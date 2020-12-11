@@ -3,8 +3,13 @@
 
 #include "movieInfo.hpp"
 #include "movie.hpp"
+#include "newMovie.hpp"
+#include "decorator.hpp"
 #include "movieCategory.hpp"
 #include "addGenre.hpp"
+#include "addYear.hpp"
+#include "addRuntime.hpp"
+#include "addRating.hpp"
 #include "Visitor.hpp"
 #include <string>
 
@@ -40,9 +45,13 @@ class Calculation {
             vector<MovieInfo*> movieList = vis->getMovieVector();
 
             for(int i = 0; i < movieList.size(); i++){
-                final += movieList[i]->getName();
-                temp = new addGenre(movieList[i]);
-                final += temp->output_Info();
+                movieInfo* temp1  =  movieList[i];
+		movieInfo* temp2  =  new addGenre(temp1);
+		movieInfo* temp3  =  new addRating(temp2);
+		movieInfo* temp4  =  new addYear(temp3);
+		movieInfo* temp5  =  new addRuntime(temp4);
+		cout << temp5->output_info() << endl;
+
 
                 //now do the same with the other classes
             }
