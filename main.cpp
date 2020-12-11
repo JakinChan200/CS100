@@ -12,6 +12,7 @@
 #include <fstream>
 #include <ctype.h>
 #include "calculations.hpp"
+#include <sstream>
 
 using namespace std;
 
