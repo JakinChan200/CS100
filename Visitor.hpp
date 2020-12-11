@@ -1,22 +1,23 @@
 #ifndef VISITOR_HPP
 #define VISITOR_HPP
-
+#include <iostream>
 using namespace std;
 
 
 class Visitor {
+    private:
+        int num = 0;
     public:
-        Visitor(){};
+        Visitor(){ 
+            num = 0;
+        };
         void visit(){
-            counter++;
+            num++;
         }
 
         int getCounter(){
-            return counter;
+            return num;
         }
-
-    private:
-        int counter = 0;
 };
 
 #endif
