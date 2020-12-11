@@ -16,7 +16,7 @@ int main(int argc, char **argv) {
 
 using namespace std;
 
-/*
+
 Write tests here of format..
 
 TEST(TestType, TestName) {
