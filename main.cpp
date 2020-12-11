@@ -12,7 +12,7 @@
 #include <fstream>
 #include <ctype.h>
 #include "calculations.hpp"
-//#include "movieInfo.hpp"
+#include <sstream>
 
 using namespace std;
 
