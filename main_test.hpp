@@ -13,7 +13,6 @@ using namespace std;
 TEST(testDeterminegenre, testingInvalidValues) {
     EXPECT_EQ(determine_genre(2), "Adventure");
 }
-
-}
 */
+
 #endif
